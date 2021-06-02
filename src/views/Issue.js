@@ -4,12 +4,11 @@ import Sidebar from '../components/Sidebar';
 import Modal from 'react-awesome-modal';
 import { addIssue } from '../api/axios';
 import axios from 'axios';
-
+import { useHistory } from 'react-router-dom'
 
 async function addNewIssue(project_id, issue_content) {
     var res = await addIssue(project_id, issue_content);
     console.log(res);
-
     return res;
 }
 
@@ -41,15 +40,23 @@ function Issue(props) {
         set_issue(event.currentTarget.value);
     }
 
-    const newIssue = () => {
+    const newIssue = async function() {
         if(issue!==""){
-            const res = addNewIssue(project_id, issue);
-            alert('이슈가 등록되었습니다.');
-            // clear
+            const res = await addNewIssue(project_id, issue);
             set_issue("");
             set_modal(false);
+            alert('이슈가 등록되었습니다.');
+            window.location.reload(); 
 
-            window.location.replace('/'+user_id+'/project/'+project_id+"/"+project_name+"/issue");
+            /*
+            console.log(props)
+            props.history.replace(props.location.pathname)
+
+            //let url = `/${user_id}/project/${project_id}/${project_name}/issue`
+            
+            console.log(props.location.pathname)
+            */
+            //window.location.replace('/'+user_id+'/project/'+project_id+"/"+project_name+"/issue");
         }
         else {
             alert('내용을 입력해주세요.')
