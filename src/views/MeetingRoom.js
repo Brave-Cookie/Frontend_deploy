@@ -190,7 +190,7 @@ class MeetingRoom extends Component {
             // 파일 전송
             axios({
               method: "post",
-              url: 'https://localhost:5000/api/record',
+              url: 'https://13.124.239.189:5000/api/record',
               data: fd,
               headers: {
                 'Accept': 'application/json',
@@ -299,7 +299,7 @@ class MeetingRoom extends Component {
     // ------------------------------------------------------ socket 통신 ------------------------------------------------------
 
     // 소켓 연결
-    let client_socket = socketio.connect('https://localhost:5000')
+    let client_socket = socketio.connect('https://13.124.239.189:5000')
 
     // 참가자 입장시
     client_socket.on('insert_mapping',

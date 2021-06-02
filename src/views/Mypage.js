@@ -30,7 +30,7 @@ function Mypage(props) {
     const [input, set_input] = useState(0);
 
     useEffect(() => {
-        axios.get('https://localhost:3000/api/project/list/' + user_id)
+        axios.get('https://13.124.239.189:3000/api/project/list/' + user_id)
             .then(res => {
                 console.log(res.data);
                 set_projects(res.data.list);
@@ -82,7 +82,7 @@ function Mypage(props) {
     }
     const enterMeeting = () => {
         if (meeting_code !== "") {
-            let res = axios.get('https://localhost:3000/api/auth/check/' + meeting_code)
+            let res = axios.get('https://13.124.239.189:3000/api/auth/check/' + meeting_code)
                 .then((res) => {
                     if (res.status === 200) {
                         let meeting_name = res.data.meeting_name;

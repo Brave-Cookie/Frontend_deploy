@@ -19,7 +19,7 @@ function Log(props) {
     const [log_fear, set_fear] = useState([]);
 
     useEffect(() => {
-        axios.get('https://localhost:3000/api/meetingLog/log/fetch/' + meeting_id)
+        axios.get('https://13.124.239.189:3000/api/meetingLog/log/fetch/' + meeting_id)
             .then(res => {
                 console.log(res);
                 set_logContent(res.data.list);
@@ -38,7 +38,7 @@ function Log(props) {
         set_anger(res);
         console.log(log_anger);*/
         let feeling = "anger";
-        axios.get('https://localhost:3000/api/meetingLog/log/fetch/' + meeting_id + '/' + feeling)
+        axios.get('https://13.124.239.189:3000/api/meetingLog/log/fetch/' + meeting_id + '/' + feeling)
             .then(res => {
                 console.log(res);
                 set_anger(res.data.list);
@@ -48,7 +48,7 @@ function Log(props) {
     }, [])
     useEffect(() => {
         let feeling = "happiness";
-        axios.get('https://localhost:3000/api/meetingLog/log/fetch/' + meeting_id + '/' + feeling)
+        axios.get('https://13.124.239.189:3000/api/meetingLog/log/fetch/' + meeting_id + '/' + feeling)
             .then(res => {
                 console.log(res);
                 set_happy(res.data.list);
@@ -56,7 +56,7 @@ function Log(props) {
     }, [])
     useEffect(() => {
         let feeling = "neutral";
-        axios.get('https://localhost:3000/api/meetingLog/log/fetch/' + meeting_id + '/' + feeling)
+        axios.get('https://13.124.239.189:3000/api/meetingLog/log/fetch/' + meeting_id + '/' + feeling)
             .then(res => {
                 console.log(res);
                 set_neutral(res.data.list);
@@ -64,7 +64,7 @@ function Log(props) {
     }, [])
     useEffect(() => {
         let feeling = "sadness";
-        axios.get('https://localhost:3000/api/meetingLog/log/fetch/' + meeting_id + '/' + feeling)
+        axios.get('https://13.124.239.189:3000/api/meetingLog/log/fetch/' + meeting_id + '/' + feeling)
             .then(res => {
                 console.log(res);
                 set_sad(res.data.list);
@@ -72,7 +72,7 @@ function Log(props) {
     }, [])
     useEffect(() => {
         let feeling = "fear";
-        axios.get('https://localhost:3000/api/meetingLog/log/fetch/' + meeting_id + '/' + feeling)
+        axios.get('https://13.124.239.189:3000/api/meetingLog/log/fetch/' + meeting_id + '/' + feeling)
             .then(res => {
                 console.log(res);
                 set_fear(res.data.list);
