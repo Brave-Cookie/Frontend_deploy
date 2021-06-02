@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import Header from '../components/Header';
 import Logo from '../assets/image/logo.png'
+import axios from 'axios';
 
 function Home(props) {
 
@@ -10,6 +11,24 @@ function Home(props) {
     }
     // 홈으로 이동시 로컬 스토리지의 인증 토큰 삭제
     delete localStorage.accessToken;
+
+
+    //
+    function chk_express(){
+        axios.post('https://13.124.239.189:3000/api/test/chk_DB').then(
+            res => {
+                console.log(res)
+            }
+        )
+    }
+
+    function chk_flask(){
+        axios.post('https://13.124.239.189:5000/api/test').then(
+            res => {
+                console.log(res)
+            }
+        )
+    }
     
     return(
         <div className="home">
@@ -17,6 +36,11 @@ function Home(props) {
                 <div className="home-link">
                     <p style={{ fontWeight: "bold", color: "#6D42F8" }}>-</p>
                     <Link to="/login" style={{ fontWeight: "bold" }}>START</Link>
+
+                    <br/>
+                    <button onClick={chk_express}>chk_express</button>
+                    <button onClick={chk_flask}>chk_flask</button>
+
                 </div>
         
                 <div className="home-title">
