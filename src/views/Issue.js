@@ -4,13 +4,7 @@ import Sidebar from '../components/Sidebar';
 import Modal from 'react-awesome-modal';
 import { addIssue } from '../api/axios';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom'
 
-async function addNewIssue(project_id, issue_content) {
-    var res = await addIssue(project_id, issue_content);
-    console.log(res);
-    return res;
-}
 
 function Issue(props) {
 
@@ -40,26 +34,22 @@ function Issue(props) {
         set_issue(event.currentTarget.value);
     }
 
-    const newIssue = async function() {
+    const newIssue = async () => {
         if(issue!==""){
-            const res = await addNewIssue(project_id, issue);
-            set_issue("");
             set_modal(false);
-            alert('이슈가 등록되었습니다.');
-            window.location.reload(); 
-
-            /*
-            console.log(props)
-            props.history.replace(props.location.pathname)
-
-            //let url = `/${user_id}/project/${project_id}/${project_name}/issue`
-            
-            console.log(props.location.pathname)
-            */
-            //window.location.replace('/'+user_id+'/project/'+project_id+"/"+project_name+"/issue");
+            var res = await addIssue(project_id, issue);
+            if(res.status == 200){
+                // 삽입성공신호 오면 issues 리스트에 새로 입력된 issue를 추가 -> 화면에 추가됨
+                issues.push({issue_content : issue})
+                alert('💡 이슈가 등록되었습니다.');
+                set_issue("");
+            }
+            else{
+                alert('⚠ 이슈 등록에 실패했습니다.');
+            }
         }
         else {
-            alert('내용을 입력해주세요.')
+            alert('⚠ 내용을 입력해주세요. ⚠')
         }
     }
 

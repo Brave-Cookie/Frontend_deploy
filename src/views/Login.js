@@ -16,7 +16,6 @@ async function getLogin(props, user_id, user_pw) {
         localStorage.setItem('accessToken', token);
         if (localStorage.getItem('accessToken')) {
             props.history.push(`/mypage/${user_id}`)
-            //window.location = `/mypage/${user_id}`;
         }
         return true;
     }
