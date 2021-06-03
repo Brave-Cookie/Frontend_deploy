@@ -29,9 +29,9 @@ function Home(props) {
             }
         )
     }
-
+    
     function chk_domain(){
-        axios.post('https://ec2-3-36-71-108.ap-northeast-2.compute.amazonaws.com:3000/api/test/chk_DB').then(
+        axios.post('https://ec2-13-124-239-189.ap-northeast-2.compute.amazonaws.com:3000/api/test/chk_DB').then(
             res => {
                 console.log(res)
             }
