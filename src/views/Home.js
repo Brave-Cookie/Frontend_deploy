@@ -29,6 +29,14 @@ function Home(props) {
             }
         )
     }
+
+    function chk_domain(){
+        axios.post('https://ec2-3-36-71-108.ap-northeast-2.compute.amazonaws.com:3000/api/test/chk_DB').then(
+            res => {
+                console.log(res)
+            }
+        )
+    }
     
     return(
         <div className="home">
@@ -40,6 +48,7 @@ function Home(props) {
                     <br/>
                     <button onClick={chk_express}>chk_express</button>
                     <button onClick={chk_flask}>chk_flask</button>
+                    <button onClick={chk_domain}>chk_domain</button>
 
                 </div>
         
