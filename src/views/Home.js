@@ -13,7 +13,7 @@ function Home(props) {
     delete localStorage.accessToken;
 
 
-    //
+    /*
     function chk_express(){
         axios.post('https://13.124.239.189:3000/api/test/chk_DB').then(
             res => {
@@ -36,7 +36,7 @@ function Home(props) {
                 console.log(res)
             }
         )
-    }
+    }*/
     
     return(
         <div className="home">
@@ -44,12 +44,12 @@ function Home(props) {
                 <div className="home-link">
                     <p style={{ fontWeight: "bold", color: "#6D42F8" }}>-</p>
                     <Link to="/login" style={{ fontWeight: "bold" }}>START</Link>
-
+                    {/*
                     <br/>
                     <button onClick={chk_express}>chk_express</button>
                     <button onClick={chk_flask}>chk_flask</button>
                     <button onClick={chk_domain}>chk_domain</button>
-
+                    */}
                 </div>
         
                 <div className="home-title">
