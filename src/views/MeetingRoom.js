@@ -195,8 +195,10 @@ class MeetingRoom extends Component {
               headers: {
                 'Accept': 'application/json',
                 "Content-Type": "multipart/form-data"
-              },
-            })
+              }
+            }).then(
+              res => { console.log(res) }
+            )
           };
         }
       )
