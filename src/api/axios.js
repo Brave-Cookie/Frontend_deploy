@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const DefalutAxios = axios.create({
-    baseURL : 'https://13.124.239.189:3000/api'
+    baseURL : 'https://flog-express.tk/api'
 })
 
 export function registUser(user_data){

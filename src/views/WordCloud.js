@@ -14,7 +14,7 @@ function WordCloud(props) {
     const [summary_text, set_summary] = useState();
     const [wordcloud,set_wordcloud] = useState([]);
     useEffect(() => {
-        axios.get('https://13.124.239.189:5000/api/log/wordcloud/' + meeting_id)
+        axios.get('https://flog-flask.tk/api/log/wordcloud/' + meeting_id)
             .then(res => {
                 console.log(res.data[1]);
                 let list = res.data[1];
@@ -27,7 +27,7 @@ function WordCloud(props) {
             })
     }, [])
     useEffect(() => {
-        axios.get('https://13.124.239.189:5000/api/log/summary/' + meeting_id)
+        axios.get('https://flog-flask.tk/api/log/summary/' + meeting_id)
             .then(res => {
                 console.log(res.data);
                 set_summary(res.data[1]);

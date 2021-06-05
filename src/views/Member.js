@@ -16,7 +16,7 @@ function Member(props) {
     const [current_members, set_currentMemebers] = useState([]);
 
     useEffect(() => {
-        axios.get('https://13.124.239.189:3000/api/project/member/list/' + project_id)
+        axios.get('https://flog-express.tk/api/project/member/list/' + project_id)
             .then(res => {
                 console.log(res);
                 set_currentMemebers(res.data.list);

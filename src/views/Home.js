@@ -13,44 +13,59 @@ function Home(props) {
     delete localStorage.accessToken;
 
 
-    /*
+    /* rest api 테스트용
     function chk_express(){
-        axios.post('https://13.124.239.189:3000/api/test/chk_DB').then(
+        axios.post('https://flog-express.tk/api/test/chk_DB').then(
             res => {
                 console.log(res)
             }
         )
     }
-
     function chk_flask(){
-        axios.post('https://13.124.239.189:5000/api/test').then(
+        axios.post('https://flog-flask.tk/api/test').then(
             res => {
                 console.log(res)
             }
         )
     }
-    
-    function chk_domain(){
-        axios.post('https://ec2-13-124-239-189.ap-northeast-2.compute.amazonaws.com:3000/api/test/chk_DB').then(
+    function chk_local_express(){
+        axios.post('http://localhost:3000/api/test/chk_DB').then(
+            res => {
+                console.log(res)
+            }
+        )
+    }
+    function chk_local_flask(){
+        axios.post('http://localhost:5000/api/test').then(
             res => {
                 console.log(res)
             }
         )
     }*/
+
     
     return(
         <div className="home">
             <div className="home-container">
+                
+                {/* 
+                <br/>
+                <button onClick={chk_express}>chk_express</button>
+                <button onClick={chk_flask}>chk_flask</button>
+                <button onClick={chk_local_express}>chk_local_express</button>
+                <button onClick={chk_local_flask}>chk_local_flask</button>
+                    */}
+            
                 <div className="home-link">
                     <p style={{ fontWeight: "bold", color: "#6D42F8" }}>-</p>
                     <Link to="/login" style={{ fontWeight: "bold" }}>START</Link>
-                    {/*
-                    <br/>
-                    <button onClick={chk_express}>chk_express</button>
-                    <button onClick={chk_flask}>chk_flask</button>
-                    <button onClick={chk_domain}>chk_domain</button>
-                    */}
                 </div>
+                <div className="demo_link">
+                    <p style={{ fontWeight: "bold", color: "#6D42F8" }}>-</p>
+                    {/* FIXME */}
+                    <Link to="/" style={{ fontWeight: "bold" }}>DEMO</Link>
+                </div>
+
         
                 <div className="home-title">
                     FLOG를 통해 감정이 담긴<br />회의록을 만나보세요
